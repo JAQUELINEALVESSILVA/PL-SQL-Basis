@@ -1,0 +1,21 @@
+-- UPDATE INCREASING THE SALARY IN 30%
+SET SERVEROUTPUT ON
+
+DECLARE
+    V_SALARIO  NUMBER(10,2);
+
+BEGIN
+  -- First check the value of salary.
+  SELECT SALARY INTO V_SALARIO 
+  FROM HR.EMPLOYEES
+  WHERE  FIRST_NAME = 'Jaqueline';  
+  DBMS_OUTPUT.put_line('The salary is: ' || V_SALARIO );
+  
+  V_SALARIO := V_SALARIO * 1.3; -- salary being increased in 30%
+
+   UPDATE  HR.EMPLOYEES 
+    SET     SALARY = V_SALARIO
+  WHERE   FIRST_NAME = 'Jaqueline'; -- Update the query.      
+   COMMIT; -- 
+END;
+

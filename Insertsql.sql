@@ -1,0 +1,11 @@
+BEGIN
+
+    
+    INSERT INTO HR.EMPLOYEES 
+        (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, EMAIL, HIRE_DATE, JOB_ID, SALARY)
+    VALUES  
+        (HR.EMPLOYEES_SEQ.NEXTVAL, 'Joao', 'gomes', 'jose@gmail.com', SYSDATE, 'IT_PROG', 5000);  
+  COMMIT;
+
+END;
+
